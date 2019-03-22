@@ -10,18 +10,23 @@ import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Redis Block Queue Listener
+ */
 @Component
 @Slf4j
-public class QueueListener {
+public class RedisQueueListener {
+    private final StringRedisTemplate redisTemplate;
+
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    public RedisQueueListener(StringRedisTemplate redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
 
     @EventListener
     @Async
     public void listen(SseQueueEvent event){
-        event.getSseEmitter().onCompletion(()->{
-            event.setRunning(false);
-        });
+        event.getSseEmitter().onCompletion(()-> event.setRunning(false));
         while (event.isRunning()){
             String value;
             if(event.getType()==SseQueueEvent.TYPE_LEFT){
