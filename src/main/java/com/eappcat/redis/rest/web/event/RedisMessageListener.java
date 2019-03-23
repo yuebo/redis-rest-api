@@ -14,20 +14,25 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Component
 @Slf4j
 public class RedisMessageListener {
-    @Autowired
-    private StringRedisTemplate redisTemplate;
-    @Autowired
-    private RedisMessageListenerContainer redisMessageListenerContainer;
+    private final StringRedisTemplate redisTemplate;
+    private final RedisMessageListenerContainer redisMessageListenerContainer;
 
-    public class DefaultMessageListener implements MessageListener{
-        private SseEmitter emitter;
+    @Autowired
+    public RedisMessageListener(StringRedisTemplate redisTemplate, RedisMessageListenerContainer redisMessageListenerContainer) {
+        this.redisTemplate = redisTemplate;
+        this.redisMessageListenerContainer = redisMessageListenerContainer;
+    }
 
-        public DefaultMessageListener(SseEmitter emitter){
-            this.emitter=emitter;
+    private class DefaultMessageListener implements MessageListener{
+        private SsePublishEvent event;
+
+        DefaultMessageListener(SsePublishEvent event){
+            this.event=event;
         }
 
         @Override
@@ -39,16 +44,16 @@ public class RedisMessageListener {
                 messageMap.put("channel",channel);
                 messageMap.put("value",value);
                 log.info("receive message on topic {}, {}",channel,value);
-                emitter.send(messageMap, MediaType.APPLICATION_JSON);
+                event.getSseEmitter().send(SseEmitter.event().id(UUID.randomUUID().toString()).data(value,MediaType.APPLICATION_JSON));
             } catch (Exception e) {
-                emitter.complete();
+                event.getSseEmitter().complete();
             }
         }
     }
 
     @EventListener
     public void listen(SsePublishEvent emitterEvent){
-        DefaultMessageListener messageListener=new DefaultMessageListener(emitterEvent.getSseEmitter());
+        DefaultMessageListener messageListener=new DefaultMessageListener(emitterEvent);
         emitterEvent.getSseEmitter().onCompletion(()->{
             redisMessageListenerContainer.removeMessageListener(messageListener);
             log.info("topic remove {}", emitterEvent.getChannel());

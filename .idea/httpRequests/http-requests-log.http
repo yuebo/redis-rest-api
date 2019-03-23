@@ -1,0 +1,230 @@
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T083927.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T083748-1.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T083748.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T082656-2.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T082656-1.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T082656.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T082655.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T082654.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T022222-2.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T022222-1.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T022222.200.json
+
+###
+
+POST http://localhost:8080/redis/list/leftPush/test
+Accept: */*
+Cache-Control: no-cache
+
+11112
+
+<> 2019-03-23T022221.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T095244.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T095101.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T095046.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T091308.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T090622.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T090550.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T090546.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T090544.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T090527.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T085909.200.json
+
+###
+
+POST http://localhost:8080/redis/pub/test
+Accept: */*
+Cache-Control: no-cache
+
+1111
+
+<> 2019-03-22T085901.200.json
+
+###
+
